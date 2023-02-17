@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Event
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Trash
   - Water
   - UI
   - 
