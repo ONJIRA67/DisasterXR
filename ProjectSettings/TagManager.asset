@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Event
+  - BoxTrash
+  - Shelf
+  - Photofame
+  - Book Shelf
   layers:
   - Default
   - TransparentFX
@@ -12,10 +16,10 @@ TagManager:
   - Trash
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Photofame
+  - Shelf
+  - Photofame
+  - Book Shelf
   - 
   - 
   - 
