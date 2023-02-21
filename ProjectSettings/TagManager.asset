@@ -9,6 +9,8 @@ TagManager:
   - Shelf
   - Photofame
   - Book Shelf
+  - Fire
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Shelf
   - Photofame
   - Book Shelf
-  - 
+  - Item
   - 
   - 
   - 

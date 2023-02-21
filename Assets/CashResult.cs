@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class CashResult : MonoBehaviour
 {
-    public int[,] shopItems = new int[2, 16];
+    public int[,] shopItems = new int[3, 16];
     public float coins;
     public TextMeshProUGUI CoinsTXT;
     public GameObject buyButton;

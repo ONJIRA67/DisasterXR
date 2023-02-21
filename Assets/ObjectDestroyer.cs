@@ -23,5 +23,6 @@ public class ObjectDestroyer : MonoBehaviour
         {
             toggle.isOn = false;
         }
+       
     }
 }
