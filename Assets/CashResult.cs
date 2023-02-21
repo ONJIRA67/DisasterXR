@@ -11,14 +11,13 @@ public class CashResult : MonoBehaviour
     public int[,] shopItems = new int[3, 16];
     public float coins;
     public TextMeshProUGUI CoinsTXT;
-    public GameObject buyButton;
-    public GameObject sellButton;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        CoinsTXT.text = "�������:" + coins.ToString();
+        CoinsTXT.text = "คงเหลือ:" + coins.ToString();
 
         //ID's
         shopItems[1, 1] = 1;
@@ -65,11 +64,10 @@ public class CashResult : MonoBehaviour
         if (coins >= shopItems[2, ButtonRef.GetComponent<ButtonBuyInfo>().ItemID])
         {
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonBuyInfo>().ItemID];
-            CoinsTXT.text = "�������:" + coins.ToString();
-            sellButton.SetActive(true);
-            buyButton.SetActive(false);
-
-
+            CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+            ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(false);
+            ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(true);
+            
             
         }
         
@@ -78,12 +76,14 @@ public class CashResult : MonoBehaviour
     public void Sell()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-        if(sellButton.activeSelf){
-            coins += shopItems[2, ButtonRef.GetComponent<ButtonSellInfo>().ItemID];
-            CoinsTXT.text = "�������:" + coins.ToString();
-            sellButton.SetActive(false);
-            buyButton.SetActive(true);
 
+        if(!ButtonRef.GetComponent<ButtonSellInfo>().sellButton.activeInHierarchy)
+        {
+            coins += shopItems[2, ButtonRef.GetComponent<ButtonSellInfo>().ItemID];
+            CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+            ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(true);
+            ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(false);
         }
+
     }
 }

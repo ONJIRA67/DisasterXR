@@ -9,7 +9,8 @@ public class ButtonBuyInfo : MonoBehaviour
 {
     public int ItemID;
     public GameObject ShopManager;
-    GameObject objectToSpawn;
+    public GameObject buyButton;
+    public GameObject Items;
 
     // Update is called once per frame
     void Start()
