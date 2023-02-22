@@ -69,6 +69,7 @@ public class CashResult : MonoBehaviour
             ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(true);
             
             
+            
         }
         
     }
