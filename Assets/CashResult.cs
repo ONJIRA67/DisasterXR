@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class CashResult : MonoBehaviour
 {
-    public int[,] shopItems = new int[3, 16];
+    public int[,] shopItems = new int[3, 18];
     public float coins;
     public TextMeshProUGUI CoinsTXT;
 
@@ -35,6 +35,8 @@ public class CashResult : MonoBehaviour
         shopItems[1, 13] = 13;
         shopItems[1, 14] = 14;
         shopItems[1, 15] = 15;
+        shopItems[1, 16] = 16;
+        shopItems[1, 17] = 17;
 
         //Price
         shopItems[2, 1] = 5;
@@ -52,6 +54,8 @@ public class CashResult : MonoBehaviour
         shopItems[2, 13] = 3;
         shopItems[2, 14] = 2;
         shopItems[2, 15] = 10;
+        shopItems[2, 16] = 25;
+        shopItems[2, 17] = 20;
 
     }
 
@@ -66,6 +70,7 @@ public class CashResult : MonoBehaviour
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonBuyInfo>().ItemID];
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
             ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(false);
+            ButtonRef.GetComponent<ButtonBuyInfo>().Items.SetActive(true);
             ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(true);
             
             
@@ -78,12 +83,13 @@ public class CashResult : MonoBehaviour
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        if(!ButtonRef.GetComponent<ButtonSellInfo>().sellButton.activeInHierarchy)
+        if(!ButtonRef.GetComponent<ButtonSellInfo>().sellButton.activeSelf)
         {
             coins += shopItems[2, ButtonRef.GetComponent<ButtonSellInfo>().ItemID];
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
             ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(true);
             ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(false);
+            ButtonRef.GetComponent<ButtonSellInfo>().Items.SetActive(false);
         }
 
     }
