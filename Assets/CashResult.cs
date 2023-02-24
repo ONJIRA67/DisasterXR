@@ -71,7 +71,7 @@ public class CashResult : MonoBehaviour
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
             ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(false);
             ButtonRef.GetComponent<ButtonBuyInfo>().Items.SetActive(true);
-            ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(true);
+            ButtonRef.GetComponent<ButtonBuyInfo>().sellButton.SetActive(true);
             
             
             
@@ -83,14 +83,12 @@ public class CashResult : MonoBehaviour
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        if(!ButtonRef.GetComponent<ButtonSellInfo>().sellButton.activeSelf)
-        {
             coins += shopItems[2, ButtonRef.GetComponent<ButtonSellInfo>().ItemID];
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
-            ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(true);
+            ButtonRef.GetComponent<ButtonSellInfo>().buyButton.SetActive(true);
             ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(false);
             ButtonRef.GetComponent<ButtonSellInfo>().Items.SetActive(false);
-        }
+        
 
     }
 }
