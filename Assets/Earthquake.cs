@@ -5,7 +5,7 @@ using UnityEngine;
 public class Earthquake : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float duration = 10f;
+    public float duration = 90f;
     public float force = 1f;
 
     private float startTime;

@@ -8,7 +8,6 @@ public class ObjectDestroyer : MonoBehaviour
 {
     // Start is called before the first frame update
     public Toggle toggle;
-
     private bool destroyed = false;
 
     void OnDestroy()
