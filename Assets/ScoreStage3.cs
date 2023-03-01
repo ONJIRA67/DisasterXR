@@ -15,41 +15,46 @@ public class ScoreStage3 : MonoBehaviour
     public TriggerPhotofame triggerPhotofame;
     public TriggerObjects triggerTable;
 
+    public void Start()
+    {
+        ScoreTXT.text = score.ToString();
+    }
     // Start is called before the first frame update
     public void summaryScore()
     {
 
-        if(triggerShelf == true)
+        if(triggerShelf.triggerShelf == true)
         {
-            ScoreTXT.text +="-0\n";
-        }else{
-            score-= 15;
-            ScoreTXT.text +="-15\n";
+            score -= 15;
+            ScoreTXT.text = score.ToString() ;
+            triggerBoxHallway.triggerBoxHallway = false;
         }
 
-        if(triggerBoxHallway == true)
+        if (triggerBoxHallway.triggerBoxHallway == true)
         {
-            ScoreTXT.text +="-0\n";
-        }else{
-            score-= 10;
-            ScoreTXT.text +="-10\n";
+            score -= 15;
+            ScoreTXT.text = score.ToString();
+            triggerPhotofame.triggerPhotofame = false;
         }
 
-        if(triggerPhotofame == true)
+        if (triggerPhotofame.triggerPhotofame == true)
         {
-            ScoreTXT.text +="-0\n";
-        }else{
-            score-= 20;
-            ScoreTXT.text +="-20\n";
+            score -= 15;
+            ScoreTXT.text = score.ToString();
+            triggerShelf.triggerShelf = false;
         }
 
-        if(triggerTable == false)
+        if (triggerTable.triggerTable == true)
         {
-            ScoreTXT.text +="-0\n";
-        }else{
-            score+= 20;
-            ScoreTXT.text +="+20\n";
+            score -= 15;
+            ScoreTXT.text = score.ToString();
+            triggerTable.triggerTable = false;
         }
 
+    }
+
+    private void Update()
+    {
+        summaryScore();
     }
 }

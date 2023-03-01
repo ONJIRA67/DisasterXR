@@ -14,4 +14,5 @@ public class TriggerBoxHallway : MonoBehaviour
             triggerBoxHallway = true;
         }
     }
+
 }

@@ -16,12 +16,5 @@ public class ObjectDestroyer : MonoBehaviour
         toggle.isOn = true;
     }
 
-    void Update()
-    {
-        if (!destroyed && toggle.isOn)
-        {
-            toggle.isOn = false;
-        }
-       
-    }
+    
 }
