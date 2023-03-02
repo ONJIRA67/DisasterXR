@@ -5,8 +5,10 @@ using UnityEngine;
 public class Earthquake : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float duration = 90f;
+    public float duration = 60f;
     public float force = 1f;
+    public GameObject exist;
+    public GameObject inTable; 
 
     private float startTime;
 
@@ -25,5 +27,8 @@ public class Earthquake : MonoBehaviour
                 rb.AddForce(Random.insideUnitSphere * force, ForceMode.Impulse);
             }
         }
+        inTable.SetActive(false);
+        exist.SetActive(true);
+
     }
 }

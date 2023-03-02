@@ -8,17 +8,15 @@ using UnityEngine.SceneManagement;
 
 public class ScoreStage3 : MonoBehaviour
 {
-    public TextMeshProUGUI ScoreTXT;
+    public TextMeshProUGUI ScoreShelfTXT;
+    public TextMeshProUGUI ScoreBoxTXT;
+    public TextMeshProUGUI ScorePhotofameTXT;
+    public TextMeshProUGUI SummaryTXT;
     public int score = 100;
     public TriggerScore triggerShelf;
     public TriggerBoxHallway triggerBoxHallway;
     public TriggerPhotofame triggerPhotofame;
-    public TriggerObjects triggerTable;
 
-    public void Start()
-    {
-        ScoreTXT.text = score.ToString();
-    }
     // Start is called before the first frame update
     public void summaryScore()
     {
@@ -26,35 +24,33 @@ public class ScoreStage3 : MonoBehaviour
         if(triggerShelf.triggerShelf == true)
         {
             score -= 15;
-            ScoreTXT.text = score.ToString() ;
-            triggerBoxHallway.triggerBoxHallway = false;
+            ScoreShelfTXT.text = "-15" ;
+        }else{
+            ScoreShelfTXT.text = "-0" ;
         }
 
         if (triggerBoxHallway.triggerBoxHallway == true)
         {
-            score -= 15;
-            ScoreTXT.text = score.ToString();
-            triggerPhotofame.triggerPhotofame = false;
+            score -= 5;
+            ScoreBoxTXT.text = "-5";
+
+        }else{
+            ScoreBoxTXT.text = "-0" ;
         }
 
         if (triggerPhotofame.triggerPhotofame == true)
         {
-            score -= 15;
-            ScoreTXT.text = score.ToString();
-            triggerShelf.triggerShelf = false;
-        }
+            score -= 20;
+            ScorePhotofameTXT.text = "-20";
 
-        if (triggerTable.triggerTable == true)
-        {
-            score -= 15;
-            ScoreTXT.text = score.ToString();
-            triggerTable.triggerTable = false;
+        }else{
+            ScorePhotofameTXT.text = "-0" ;
         }
+        SummaryTXT.text = score.ToString();
+
+        
 
     }
 
-    private void Update()
-    {
-        summaryScore();
-    }
+  
 }
