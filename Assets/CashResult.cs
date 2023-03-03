@@ -11,6 +11,7 @@ public class CashResult : MonoBehaviour
     public int[,] shopItems = new int[3, 18];
     public float coins;
     public TextMeshProUGUI CoinsTXT;
+    public TextMeshProUGUI CoinsTXT2;
 
 
 
@@ -18,6 +19,7 @@ public class CashResult : MonoBehaviour
     void Start()
     {
         CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+        CoinsTXT2.text = "คงเหลือ:" + coins.ToString();
 
         //ID's
         shopItems[1, 1] = 1;
@@ -69,6 +71,7 @@ public class CashResult : MonoBehaviour
         {
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonBuyInfo>().ItemID];
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+            CoinsTXT2.text = "คงเหลือ:" + coins.ToString();
             ButtonRef.GetComponent<ButtonBuyInfo>().buyButton.SetActive(false);
             ButtonRef.GetComponent<ButtonBuyInfo>().Items.SetActive(true);
             ButtonRef.GetComponent<ButtonBuyInfo>().sellButton.SetActive(true);
@@ -85,6 +88,7 @@ public class CashResult : MonoBehaviour
 
             coins += shopItems[2, ButtonRef.GetComponent<ButtonSellInfo>().ItemID];
             CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+            CoinsTXT2.text = "คงเหลือ:" + coins.ToString();
             ButtonRef.GetComponent<ButtonSellInfo>().buyButton.SetActive(true);
             ButtonRef.GetComponent<ButtonSellInfo>().sellButton.SetActive(false);
             ButtonRef.GetComponent<ButtonSellInfo>().Items.SetActive(false);

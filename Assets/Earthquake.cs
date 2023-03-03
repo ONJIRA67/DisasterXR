@@ -6,7 +6,7 @@ public class Earthquake : MonoBehaviour
 {
     // Start is called before the first frame update
     public float duration = 60f;
-    public float force = 1f;
+    public float shakeMagnitude = 0.1f;
     public GameObject exist;
     public GameObject inTable; 
 
@@ -24,11 +24,17 @@ public class Earthquake : MonoBehaviour
             // Apply a random force to all objects in the scene
             foreach (Rigidbody rb in FindObjectsOfType<Rigidbody>())
             {
-                rb.AddForce(Random.insideUnitSphere * force, ForceMode.Impulse);
+                Vector3 force = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * shakeMagnitude;
+
+                rb.AddForce(force, ForceMode.Impulse);
             }
         }
-        inTable.SetActive(false);
-        exist.SetActive(true);
+        if (Time.time - startTime >= duration)
+        {
+            inTable.SetActive(false);
+            exist.SetActive(true);
+        }
+            
 
     }
 }

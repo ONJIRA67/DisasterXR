@@ -12,12 +12,17 @@ public class ScoreStage3 : MonoBehaviour
     public TextMeshProUGUI ScoreBoxTXT;
     public TextMeshProUGUI ScorePhotofameTXT;
     public TextMeshProUGUI SummaryTXT;
-    public int score = 100;
+    public float score = 100.0f;
     public TriggerScore triggerShelf;
     public TriggerBoxHallway triggerBoxHallway;
     public TriggerPhotofame triggerPhotofame;
+    public CashResult cash;
 
     // Start is called before the first frame update
+    void Start()
+    {
+        summaryScore();
+    }
     public void summaryScore()
     {
 
@@ -47,6 +52,7 @@ public class ScoreStage3 : MonoBehaviour
             ScorePhotofameTXT.text = "-0" ;
         }
         SummaryTXT.text = score.ToString();
+        cash.coins -= score;
 
         
 
