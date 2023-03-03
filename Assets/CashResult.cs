@@ -12,6 +12,7 @@ public class CashResult : MonoBehaviour
     public float coins;
     public TextMeshProUGUI CoinsTXT;
     public TextMeshProUGUI CoinsTXT2;
+    
 
 
 
