@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExistGame : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ExistGame : MonoBehaviour
         button.onClick.AddListener(QuitGame);
     }
 
+    private void Update()
+    {
+        
+    }
     void QuitGame()
     {
         Application.Quit();

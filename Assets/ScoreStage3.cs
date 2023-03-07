@@ -26,11 +26,14 @@ public class ScoreStage3 : MonoBehaviour
     public void summaryScore()
     {
 
+
         if(triggerShelf.triggerShelf == true)
         {
             score -= 15;
             ScoreShelfTXT.text = "-15" ;
-        }else{
+            triggerShelf.triggerShelf = false;
+        }
+        else{
             ScoreShelfTXT.text = "-0" ;
         }
 
@@ -38,8 +41,10 @@ public class ScoreStage3 : MonoBehaviour
         {
             score -= 5;
             ScoreBoxTXT.text = "-5";
+            triggerBoxHallway.triggerBoxHallway = false;
 
-        }else{
+        }
+        else{
             ScoreBoxTXT.text = "-0" ;
         }
 
@@ -47,8 +52,10 @@ public class ScoreStage3 : MonoBehaviour
         {
             score -= 20;
             ScorePhotofameTXT.text = "-20";
+            triggerPhotofame.triggerPhotofame = false;
 
-        }else{
+        }
+        else{
             ScorePhotofameTXT.text = "-0" ;
         }
         SummaryTXT.text = score.ToString();
