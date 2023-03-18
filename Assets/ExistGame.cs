@@ -16,7 +16,7 @@ public class ExistGame : MonoBehaviour
     {
         
     }
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

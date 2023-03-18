@@ -16,7 +16,7 @@ public class ScoreStage3 : MonoBehaviour
     public TriggerScore triggerShelf;
     public TriggerBoxHallway triggerBoxHallway;
     public TriggerPhotofame triggerPhotofame;
-    public CashResult cash;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class ScoreStage3 : MonoBehaviour
             ScorePhotofameTXT.text = "-0" ;
         }
         SummaryTXT.text = score.ToString();
-        cash.coins -= score;
+        
 
         
 

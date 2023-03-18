@@ -12,6 +12,7 @@ public class CashResult : MonoBehaviour
     public float coins;
     public TextMeshProUGUI CoinsTXT;
     public TextMeshProUGUI CoinsTXT2;
+    public ScoreStage3 scoreSum;
     
 
 
@@ -95,5 +96,12 @@ public class CashResult : MonoBehaviour
             ButtonRef.GetComponent<ButtonSellInfo>().Items.SetActive(false);
         
 
+    }
+    public void PlusSscore()
+    {
+        coins += scoreSum.score;
+        Debug.Log(coins);
+        CoinsTXT.text = "คงเหลือ:" + coins.ToString();
+        CoinsTXT2.text = "คงเหลือ:" + coins.ToString();
     }
 }
