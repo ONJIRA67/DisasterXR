@@ -25,3 +25,6 @@ Installation
  3. Install the SteamVR plugin for Unity. You can do this by navigating to the Unity Asset Store within the Unity Editor and searching for "SteamVR Plugin".
  4. Connect your HTC Vive headset and controllers to your PC and make sure they are set up and working properly with the HTC Vive software.
  5. Open project name "DisasterXR"
+
+Created by
+ Onjira Krataithong
