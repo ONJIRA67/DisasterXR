@@ -1,4 +1,4 @@
-# DisasterXR
+# Pangaea
 Overview
  The "Pangaea" is created as a virtual reality game, to practice earthquake survival skills. The game is a 3D game played from a first-person perspective using a Head Mounted Display (HTC Vive).The game consists of three stages, including preparing a grab-and-go bag, earthquake-proofing homes, and earthquake survival. Through the use of virtual reality technology, players can have a immversive earthquake experience and learn how to prepare for an earthquake while having fun playing the game. 
  
